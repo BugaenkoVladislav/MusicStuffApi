@@ -1,0 +1,29 @@
+﻿syntax = "proto3";
+option csharp_namespace = "UserService";
+service User{
+    rpc Me (Token) returns (UserInfo);
+    rpc ChangeFullUserInfo (ChangeInfo) returns (FullUserInfo);
+    rpc LogOut (Token) returns (Token);
+}
+message UserInfo{
+    string phone = 1;
+    int32 age = 2;
+    string email =3;
+    string role =4;
+    string name =5;
+}
+message Token{
+    string jwt = 1;
+}
+message LogPass{
+    string login = 1;
+    string password = 2;
+}
+message FullUserInfo{
+    UserInfo user_info = 1;
+    LogPass log_passwords = 2;
+}
+message ChangeInfo{
+    FullUserInfo user_info = 1;
+    Token token =2;
+}
