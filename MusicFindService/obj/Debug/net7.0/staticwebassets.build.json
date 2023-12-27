@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "t91c87yzNeTkAoGd3wXQ9NZ+QdukAYfkrLDC3Enh7CQ=",
+  "Source": "MusicFindService",
+  "BasePath": "_content/MusicFindService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
