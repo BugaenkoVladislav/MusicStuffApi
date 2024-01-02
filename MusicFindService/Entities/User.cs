@@ -18,6 +18,6 @@ public partial class User
     public long IdRole { get; set; }
 
     public long IdLoginPassword { get; set; }
-    
+
     public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
 }

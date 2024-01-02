@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using MusicFindService.Context;
+using MusicFindService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,5 +15,5 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
+app.MapGrpcService<MusicFindApiService>();
 app.Run();

@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+option csharp_namespace = "MusicFindService";
+service Find{
+    rpc FindMusic(Name)returns (ResultMusic);
+    rpc FindAlbum(Name)returns(ResultAlbum);
+}
+message Name{
+    string Name = 1;
+}
+message ResultMusic{
+    repeated Music music = 1;
+}
+message Music{
+    string NameMusic = 1;
+    string NameAlbum = 2;
+    string Author = 3;
+    string TrackPath = 4;
+    int64 Id = 5;
+}
+message Album{
+    string Name = 1;
+    string Author = 2;
+    string Path = 4;
+    int64 Id = 5;
+}
+message ResultAlbum{
+    repeated Album albums = 1;
+}

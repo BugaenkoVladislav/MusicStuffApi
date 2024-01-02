@@ -1,0 +1,2 @@
+obj\Debug\net7.0\Protos/Find.cs \
+obj\Debug\net7.0\Protos/FindGrpc.cs: Protos/find.proto

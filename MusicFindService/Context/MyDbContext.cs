@@ -16,24 +16,21 @@ public partial class MyDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Album> Albums { get; set; }
+    public virtual DbSet<Entities.Album> Albums { get; set; }
 
     public virtual DbSet<Genre> Genres { get; set; }
 
     public virtual DbSet<GenresMusic> GenresMusics { get; set; }
-    
-    public virtual DbSet<Music> Musics { get; set; }
+    public virtual DbSet<Entities.Music> Musics { get; set; }
 
     public virtual DbSet<Playlist> Playlists { get; set; }
 
     public virtual DbSet<PlaylistsMusic> PlaylistsMusics { get; set; }
-    
     public virtual DbSet<User> Users { get; set; }
-    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Album>(entity =>
+        modelBuilder.Entity<Entities.Album>(entity =>
         {
             entity.HasKey(e => e.IdAlbum).HasName("Albums_pkey");
 
@@ -74,8 +71,8 @@ public partial class MyDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("GenresMusics_idMusic_fkey");
         });
-        
-        modelBuilder.Entity<Music>(entity =>
+
+        modelBuilder.Entity<Entities.Music>(entity =>
         {
             entity.HasKey(e => e.IdMusic).HasName("Theme_pkey");
 
@@ -84,6 +81,11 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.IdAlbum).HasColumnName("idAlbum");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Path).HasColumnName("path");
+
+            entity.HasOne(d => d.IdAlbumNavigation).WithMany(p => p.Musics)
+                .HasForeignKey(d => d.IdAlbum)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Musics_idAlbum_fkey");
         });
 
         modelBuilder.Entity<Playlist>(entity =>
@@ -127,8 +129,6 @@ public partial class MyDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("PlaylistsMusics_idPlaylist_fkey");
         });
-
-        
 
         modelBuilder.Entity<User>(entity =>
         {

@@ -79,7 +79,7 @@ namespace AuthService {
     public abstract partial class AuthBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual Task<Token> SignIn(global::AuthService.LogPass request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::AuthService.Token> SignIn(global::AuthService.LogPass request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
