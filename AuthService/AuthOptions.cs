@@ -2,9 +2,6 @@
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using UserService.Context;
-
-namespace UserService;
 
 public class AuthOptions
 {

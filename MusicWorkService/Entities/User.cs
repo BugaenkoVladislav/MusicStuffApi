@@ -19,4 +19,6 @@ public partial class User
 
     public long IdLoginPassword { get; set; }
     
+    public virtual LoginPassword IdLoginPasswordNavigation { get; set; } = null!;
+    
 }

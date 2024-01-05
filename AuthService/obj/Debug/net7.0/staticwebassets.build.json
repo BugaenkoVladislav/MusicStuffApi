@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "bXiANGpi5bI4LxmMvQVoz+i+r+x6nWb3Jz0rhEANYyE=",
+  "Hash": "gKVVQCiJoaR8kaRyZ8E7m8ez2r1zjJ+28+rHEVo2OvE=",
   "Source": "AuthService",
   "BasePath": "_content/AuthService",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Programing\\MusicStuffService\\MusicWorkService\\MusicWorkService.csproj",
+      "Version": 2,
+      "Source": "MusicWorkService",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

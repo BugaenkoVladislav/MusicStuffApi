@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UserService.Entities;
+namespace AuthService.Entities;
 
-public partial class Role
+public  class Role
 {
     public long IdRole { get; set; }
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using AuthService.Entities;
 using Microsoft.EntityFrameworkCore;
-using UserService.Entities;
 
-namespace UserService.Context;
+namespace AuthService.Context;
 
 public partial class MyDbContext : DbContext
 {
@@ -21,12 +21,12 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
-    public virtual DbSet<Entities.User> Users { get; set; }
+    public virtual DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         
-        modelBuilder.Entity<Entities.LoginPassword>(entity =>
+        modelBuilder.Entity<LoginPassword>(entity =>
         {
             entity.HasKey(e => e.IdLoginPassword).HasName("LoginPassword_pkey");
 
@@ -47,7 +47,7 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Name).HasColumnName("name");
         });
 
-        modelBuilder.Entity<Entities.User>(entity =>
+        modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.IdUser).HasName("User_pkey");
 

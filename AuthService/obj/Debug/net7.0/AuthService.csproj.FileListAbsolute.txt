@@ -53,3 +53,16 @@ C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Microsoft.IdentityM
 C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Npgsql.dll
 C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Test.deps.json
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Test.runtimeconfig.json
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Test.exe
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Test.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Test.pdb
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\MusicWorkService.deps.json
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\MusicWorkService.runtimeconfig.json
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\MusicWorkService.exe
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\MusicWorkService.dll
+C:\Programing\MusicStuffService\AuthService\bin\Debug\net7.0\MusicWorkService.pdb

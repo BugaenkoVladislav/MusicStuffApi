@@ -15,24 +15,35 @@ public partial class MyDbContext : DbContext
         : base(options)
     {
     }
+    public virtual DbSet<Entities.LoginPassword> LoginPasswords { get; set; }
+    public virtual DbSet<Entities.Album> Albums { get; set; }
 
-    public virtual DbSet<Album> Albums { get; set; }
+    public virtual DbSet<Entities.Genre> Genres { get; set; }
 
-    public virtual DbSet<Genre> Genres { get; set; }
+    public virtual DbSet<Entities.GenresMusic> GenresMusics { get; set; }
 
-    public virtual DbSet<GenresMusic> GenresMusics { get; set; }
-
-    public virtual DbSet<Music> Musics { get; set; }
+    public virtual DbSet<Entities.Music> Musics { get; set; }
     
-    public virtual DbSet<User> Users { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Username=postgres;Database=MusicStuff;Password=Chmonya;Host=localhost;Port=5432");
+    public virtual DbSet<Entities.User> Users { get; set; }
+    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Album>(entity =>
+
+        modelBuilder.Entity<Entities.LoginPassword>(entity =>
+        {
+            entity.HasKey(e => e.IdLoginPassword).HasName("LoginPassword_pkey");
+
+            entity.ToTable("LoginPassword");
+
+            entity.Property(e => e.IdLoginPassword)
+                .UseIdentityAlwaysColumn()
+                .HasColumnName("idLoginPassword");
+            entity.Property(e => e.Login).HasColumnName("login");
+            entity.Property(e => e.Password).HasColumnName("password");
+        });
+
+        modelBuilder.Entity<Entities.Album>(entity =>
         {
             entity.HasKey(e => e.IdAlbum).HasName("Albums_pkey");
 
@@ -66,12 +77,15 @@ public partial class MyDbContext : DbContext
 
             entity.HasOne(d => d.IdGenreNavigation).WithMany(p => p.GenresMusics)
                 .HasForeignKey(d => d.IdGenre)
-                .HasConstraintName("Sub_IdProduct_fkey");
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("Sub_IdProduct_fkey")
+                ;
 
             entity.HasOne(d => d.IdMusicNavigation).WithMany(p => p.GenresMusics)
                 .HasForeignKey(d => d.IdMusic)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("GenresMusics_idMusic_fkey");
+
         });
 
         modelBuilder.Entity<Music>(entity =>
@@ -83,12 +97,16 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.IdAlbum).HasColumnName("idAlbum");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Path).HasColumnName("path");
+
+            entity.HasOne(x => x.IdAlbumNavigation)
+                .WithMany(x => x.Musics)
+                .HasForeignKey(x => x.IdAlbum).OnDelete(DeleteBehavior.Cascade);
         });
         
 
         
 
-        modelBuilder.Entity<User>(entity =>
+        modelBuilder.Entity<Entities.User>(entity =>
         {
             entity.HasKey(e => e.IdUser).HasName("User_pkey");
 
@@ -101,6 +119,11 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.IdRole).HasColumnName("idRole");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Phone).HasColumnName("phone");
+            
+            entity.HasOne(d => d.IdLoginPasswordNavigation).WithMany(p => p.Users)
+                .HasForeignKey(d => d.IdLoginPassword)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Users_idLoginPassword_fkey");
             
         });
 

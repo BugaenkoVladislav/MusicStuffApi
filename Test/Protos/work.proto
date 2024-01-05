@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+option csharp_namespace = "MusicWorkService";
+
+service Work{
+    rpc AddMusic(NewTrack) returns (NewTrack);
+    rpc DeleteMusic(Track) returns (Track);
+    rpc AddAlbum(NewAlbum) returns (NewAlbum);
+    rpc DeleteAlbum(Album) returns (Album);
+}
+message Album{
+    int64 IdAlbum = 1;
+    string JwtAuthor = 2;
+}
+message NewAlbum{
+    string Name = 1;
+    string JwtAuthor = 2;
+    string Photo = 4;
+}
+message Genres{
+    int64 Id = 1;
+    string JwtAuthor = 2;
+}
+message NewTrack{
+    string NameMusic = 1;
+    string JwtAuthor = 2;
+    int64 IdAlbum = 3;
+    repeated Genres genres = 4;
+}
+message Track{
+    int64 IdTrack = 1;
+    string JwtAuthor = 2;
+}

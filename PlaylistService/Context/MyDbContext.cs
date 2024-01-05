@@ -20,14 +20,27 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<Music> Musics { get; set; }
 
-    public virtual DbSet<Playlist> Playlists { get; set; }
+    public virtual DbSet<Entities.Playlist> Playlists { get; set; }
 
     public virtual DbSet<PlaylistsMusic> PlaylistsMusics { get; set; }
+    public virtual DbSet<LoginPassword> LoginPasswords { get; set; }
     
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Entities.LoginPassword>(entity =>
+        {
+            entity.HasKey(e => e.IdLoginPassword).HasName("LoginPassword_pkey");
+
+            entity.ToTable("LoginPassword");
+
+            entity.Property(e => e.IdLoginPassword)
+                .UseIdentityAlwaysColumn()
+                .HasColumnName("idLoginPassword");
+            entity.Property(e => e.Login).HasColumnName("login");
+            entity.Property(e => e.Password).HasColumnName("password");
+        });
         modelBuilder.Entity<Album>(entity =>
         {
             entity.HasKey(e => e.IdAlbum).HasName("Albums_pkey");
@@ -51,7 +64,7 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.Path).HasColumnName("path");
         });
 
-        modelBuilder.Entity<Playlist>(entity =>
+        modelBuilder.Entity<Entities.Playlist>(entity =>
         {
             entity.HasKey(e => e.IdPlaylist).HasName("Playlists_pkey");
 
@@ -74,22 +87,21 @@ public partial class MyDbContext : DbContext
             entity.HasKey(e => e.IdPlaylistMusic).HasName("PlaylistsMusics_pkey");
 
             entity.Property(e => e.IdPlaylistMusic)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
+                .UseIdentityAlwaysColumn()
                 .HasColumnName("idPlaylistMusic");
             entity.Property(e => e.IdMusic).HasColumnName("idMusic");
             entity.Property(e => e.IdPlaylist)
-                .ValueGeneratedOnAdd()
-                .UseIdentityAlwaysColumn()
                 .HasColumnName("idPlaylist");
 
             entity.HasOne(d => d.IdMusicNavigation).WithMany(p => p.PlaylistsMusics)
                 .HasForeignKey(d => d.IdMusic)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("PlaylistsMusics_idMusic_fkey");
 
             entity.HasOne(d => d.IdPlaylistNavigation).WithMany(p => p.PlaylistsMusics)
                 .HasForeignKey(d => d.IdPlaylist)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("PlaylistsMusics_idPlaylist_fkey");
         });
         
@@ -107,6 +119,12 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.IdRole).HasColumnName("idRole");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Phone).HasColumnName("phone");
+            
+            entity.HasOne(d => d.IdLoginPasswordNavigation).WithMany(p => p.Users)
+                .HasForeignKey(d => d.IdLoginPassword)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Users_idLoginPassword_fkey");
+
         });
 
         OnModelCreatingPartial(modelBuilder);

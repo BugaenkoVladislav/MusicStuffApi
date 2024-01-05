@@ -31,4 +31,8 @@
       <Protobuf Include="Protos\auth.proto" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Test\Test.csproj" />
+    </ItemGroup>
+
 </Project>

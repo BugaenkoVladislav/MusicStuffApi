@@ -10,7 +10,6 @@
         "dependencies": {
           "Google.Protobuf": "3.25.1",
           "Grpc.AspNetCore": "2.49.0",
-          "Grpc.AspNetCore.Server": "2.60.0-pre1",
           "Microsoft.EntityFrameworkCore": "7.0.14",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.14",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.11"
@@ -34,20 +33,20 @@
           "Grpc.Tools": "2.49.0"
         }
       },
-      "Grpc.AspNetCore.Server/2.60.0-pre1": {
+      "Grpc.AspNetCore.Server/2.49.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.60.0-pre1"
+          "Grpc.Net.Common": "2.49.0"
         },
         "runtime": {
           "lib/net7.0/Grpc.AspNetCore.Server.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.60.0.0"
+            "fileVersion": "2.49.0.0"
           }
         }
       },
       "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.60.0-pre1",
+          "Grpc.AspNetCore.Server": "2.49.0",
           "Grpc.Net.ClientFactory": "2.49.0"
         },
         "runtime": {
@@ -57,17 +56,20 @@
           }
         }
       },
-      "Grpc.Core.Api/2.60.0-pre1": {
+      "Grpc.Core.Api/2.49.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.60.0.0"
+            "fileVersion": "2.49.0.0"
           }
         }
       },
       "Grpc.Net.Client/2.49.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.60.0-pre1",
+          "Grpc.Net.Common": "2.49.0",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
         },
         "runtime": {
@@ -89,14 +91,14 @@
           }
         }
       },
-      "Grpc.Net.Common/2.60.0-pre1": {
+      "Grpc.Net.Common/2.49.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.60.0-pre1"
+          "Grpc.Core.Api": "2.49.0"
         },
         "runtime": {
           "lib/net7.0/Grpc.Net.Common.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.60.0.0"
+            "fileVersion": "2.49.0.0"
           }
         }
       },
@@ -268,6 +270,7 @@
           }
         }
       },
+      "System.Memory/4.5.3": {},
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.0": {
         "dependencies": {
@@ -296,12 +299,12 @@
       "path": "grpc.aspnetcore/2.49.0",
       "hashPath": "grpc.aspnetcore.2.49.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore.Server/2.60.0-pre1": {
+    "Grpc.AspNetCore.Server/2.49.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PWrPl8wAPHeayyqdacd9MymbDLf0cEZb6HqADvh2hOgGxlrAsz3ZlS+f+Wi9pF+iCyNGzuEYRy1uNGD214ukxQ==",
-      "path": "grpc.aspnetcore.server/2.60.0-pre1",
-      "hashPath": "grpc.aspnetcore.server.2.60.0-pre1.nupkg.sha512"
+      "sha512": "sha512-it0nmQi10S/cgC1nk/nVgQiYv5sd/IWnob8SsB3JEpbIFAAKaU6ZjdTKRiATunNtDb/IYBLGeo8BMDoxfewxyw==",
+      "path": "grpc.aspnetcore.server/2.49.0",
+      "hashPath": "grpc.aspnetcore.server.2.49.0.nupkg.sha512"
     },
     "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
       "type": "package",
@@ -310,12 +313,12 @@
       "path": "grpc.aspnetcore.server.clientfactory/2.49.0",
       "hashPath": "grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.60.0-pre1": {
+    "Grpc.Core.Api/2.49.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-feOOlUEYV4sK7eEOpQG7RJYw6ScnbAuJFJ6cKJlfGEBRNhRZa2FHWgKPwkK+VT4ylpKw1u1+qkinlrYgNdd9cQ==",
-      "path": "grpc.core.api/2.60.0-pre1",
-      "hashPath": "grpc.core.api.2.60.0-pre1.nupkg.sha512"
+      "sha512": "sha512-6OTcSQ8iML+xzmELhH4anUZlNM3dHDKPFBsMLSdiT80LJaaZKxwZml/K9ZdfLIjSR/EzdMZzzU2Avbedz4N7BA==",
+      "path": "grpc.core.api/2.49.0",
+      "hashPath": "grpc.core.api.2.49.0.nupkg.sha512"
     },
     "Grpc.Net.Client/2.49.0": {
       "type": "package",
@@ -331,12 +334,12 @@
       "path": "grpc.net.clientfactory/2.49.0",
       "hashPath": "grpc.net.clientfactory.2.49.0.nupkg.sha512"
     },
-    "Grpc.Net.Common/2.60.0-pre1": {
+    "Grpc.Net.Common/2.49.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2KlH2yir0Ik8jAHYnQshdnLYelS/46j+OHtaZkmOkqWx9p+urBaQ/MNzUnFIksAXlC+E9AM8fOcEAZX5xx8Xyg==",
-      "path": "grpc.net.common/2.60.0-pre1",
-      "hashPath": "grpc.net.common.2.60.0-pre1.nupkg.sha512"
+      "sha512": "sha512-G0TVTS8fjCk8b7td/E7C8/ssJPm3JnGVBKsveoj/89PIwIee72qkXG+tVn5c1gwTanEFPdyPoydna/bmU/NAaw==",
+      "path": "grpc.net.common/2.49.0",
+      "hashPath": "grpc.net.common.2.49.0.nupkg.sha512"
     },
     "Grpc.Tools/2.49.0": {
       "type": "package",
@@ -498,6 +501,13 @@
       "sha512": "sha512-2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "path": "system.codedom/4.4.0",
       "hashPath": "system.codedom.4.4.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",

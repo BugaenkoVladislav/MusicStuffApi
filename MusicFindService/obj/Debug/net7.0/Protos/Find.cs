@@ -27,19 +27,19 @@ namespace MusicFindService {
             "ChFQcm90b3MvZmluZC5wcm90byIUCgROYW1lEgwKBE5hbWUYASABKAkiJAoL",
             "UmVzdWx0TXVzaWMSFQoFbXVzaWMYASADKAsyBi5NdXNpYyJcCgVNdXNpYxIR",
             "CglOYW1lTXVzaWMYASABKAkSEQoJTmFtZUFsYnVtGAIgASgJEg4KBkF1dGhv",
-            "chgDIAEoCRIRCglUcmFja1BhdGgYBCABKAkSCgoCSWQYBSABKAMiPwoFQWxi",
-            "dW0SDAoETmFtZRgBIAEoCRIOCgZBdXRob3IYAiABKAkSDAoEUGF0aBgEIAEo",
-            "CRIKCgJJZBgFIAEoAyIlCgtSZXN1bHRBbGJ1bRIWCgZhbGJ1bXMYASADKAsy",
-            "Bi5BbGJ1bTJKCgRGaW5kEiAKCUZpbmRNdXNpYxIFLk5hbWUaDC5SZXN1bHRN",
-            "dXNpYxIgCglGaW5kQWxidW0SBS5OYW1lGgwuUmVzdWx0QWxidW1CE6oCEE11",
-            "c2ljRmluZFNlcnZpY2ViBnByb3RvMw=="));
+            "chgDIAEoCRIRCglUcmFja1BhdGgYBCABKAkSCgoCSWQYBSABKAMiQAoFQWxi",
+            "dW0SDAoETmFtZRgBIAEoCRIOCgZBdXRob3IYAiABKAkSDQoFUGhvdG8YBCAB",
+            "KAkSCgoCSWQYBSABKAMiJQoLUmVzdWx0QWxidW0SFgoGYWxidW1zGAEgAygL",
+            "MgYuQWxidW0ySgoERmluZBIgCglGaW5kTXVzaWMSBS5OYW1lGgwuUmVzdWx0",
+            "TXVzaWMSIAoJRmluZEFsYnVtEgUuTmFtZRoMLlJlc3VsdEFsYnVtQhOqAhBN",
+            "dXNpY0ZpbmRTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.Name), global::MusicFindService.Name.Parser, new[]{ "Name_" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.ResultMusic), global::MusicFindService.ResultMusic.Parser, new[]{ "Music" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.Music), global::MusicFindService.Music.Parser, new[]{ "NameMusic", "NameAlbum", "Author", "TrackPath", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.Album), global::MusicFindService.Album.Parser, new[]{ "Name", "Author", "Path", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.Album), global::MusicFindService.Album.Parser, new[]{ "Name", "Author", "Photo", "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::MusicFindService.ResultAlbum), global::MusicFindService.ResultAlbum.Parser, new[]{ "Albums" }, null, null, null, null)
           }));
     }
@@ -787,7 +787,7 @@ namespace MusicFindService {
     public Album(Album other) : this() {
       name_ = other.name_;
       author_ = other.author_;
-      path_ = other.path_;
+      photo_ = other.photo_;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -822,15 +822,15 @@ namespace MusicFindService {
       }
     }
 
-    /// <summary>Field number for the "Path" field.</summary>
-    public const int PathFieldNumber = 4;
-    private string path_ = "";
+    /// <summary>Field number for the "Photo" field.</summary>
+    public const int PhotoFieldNumber = 4;
+    private string photo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Path {
-      get { return path_; }
+    public string Photo {
+      get { return photo_; }
       set {
-        path_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        photo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -863,7 +863,7 @@ namespace MusicFindService {
       }
       if (Name != other.Name) return false;
       if (Author != other.Author) return false;
-      if (Path != other.Path) return false;
+      if (Photo != other.Photo) return false;
       if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -874,7 +874,7 @@ namespace MusicFindService {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Author.Length != 0) hash ^= Author.GetHashCode();
-      if (Path.Length != 0) hash ^= Path.GetHashCode();
+      if (Photo.Length != 0) hash ^= Photo.GetHashCode();
       if (Id != 0L) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -902,9 +902,9 @@ namespace MusicFindService {
         output.WriteRawTag(18);
         output.WriteString(Author);
       }
-      if (Path.Length != 0) {
+      if (Photo.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Path);
+        output.WriteString(Photo);
       }
       if (Id != 0L) {
         output.WriteRawTag(40);
@@ -928,9 +928,9 @@ namespace MusicFindService {
         output.WriteRawTag(18);
         output.WriteString(Author);
       }
-      if (Path.Length != 0) {
+      if (Photo.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Path);
+        output.WriteString(Photo);
       }
       if (Id != 0L) {
         output.WriteRawTag(40);
@@ -952,8 +952,8 @@ namespace MusicFindService {
       if (Author.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Author);
       }
-      if (Path.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Path);
+      if (Photo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Photo);
       }
       if (Id != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Id);
@@ -976,8 +976,8 @@ namespace MusicFindService {
       if (other.Author.Length != 0) {
         Author = other.Author;
       }
-      if (other.Path.Length != 0) {
-        Path = other.Path;
+      if (other.Photo.Length != 0) {
+        Photo = other.Photo;
       }
       if (other.Id != 0L) {
         Id = other.Id;
@@ -1006,7 +1006,7 @@ namespace MusicFindService {
             break;
           }
           case 34: {
-            Path = input.ReadString();
+            Photo = input.ReadString();
             break;
           }
           case 40: {
@@ -1037,7 +1037,7 @@ namespace MusicFindService {
             break;
           }
           case 34: {
-            Path = input.ReadString();
+            Photo = input.ReadString();
             break;
           }
           case 40: {

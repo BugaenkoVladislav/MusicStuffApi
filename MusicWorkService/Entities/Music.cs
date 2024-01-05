@@ -17,4 +17,5 @@ public partial class Music
 
     public virtual ICollection<GenresMusic> GenresMusics { get; set; } = new List<GenresMusic>();
     
+    public virtual Album IdAlbumNavigation { get; set; } = null!;
 }

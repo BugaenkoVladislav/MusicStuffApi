@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+option csharp_namespace = "PlaylistService";
+service Playlist{
+    rpc CreatePlaylist(NewPlaylist) returns (NewPlaylist);
+    rpc DeletePlaylist(IdPlaylist) returns (IdPlaylist);
+    rpc AddInPlaylist(Track) returns (Track);
+    rpc DeleteFromPlaylist(Track) returns (Track);
+    rpc GetMyPlaylists(Playlists) returns (Playlists);
+}
+message NewPlaylist{
+    string jwtUser = 1;
+    string name = 2;
+    string photopath = 3;
+    bool isPublic = 4;
+    
+}
+message IdPlaylist{
+    string jwtUser = 1;
+    int64 id =2;
+}
+message Track{
+    string jwtUser = 1;
+    int64 idTrack = 2;
+    int64 idPlaylist =3;
+}
+
+message Playlists{
+    string jwtUser =1;
+    repeated NewPlaylist playlists = 2;
+}
+

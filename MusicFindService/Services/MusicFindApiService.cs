@@ -27,15 +27,14 @@ public class MusicFindApiService:Find.FindBase
                 Author = _db.Users.First(x=>x.IdUser == i.IdUser).Name,
                 Id = i.IdAlbum,
                 Name = i.Name,
-                Path = i.Photo
+                Photo = i.Photo
             });
         }
 
         return Task.FromResult(result);
     }
 
-    public override Task<ResultMusic> FindMusic(Name request, ServerCallContext context)//dont correct work
-    {
+    public override Task<ResultMusic> FindMusic(Name request, ServerCallContext context){
         var result = new ResultMusic();
         List<Entities.Music> music = _db.Musics.Where(x => x.Name.ToLower() == request.Name_.ToLower()).ToList();
         foreach (var i in music)

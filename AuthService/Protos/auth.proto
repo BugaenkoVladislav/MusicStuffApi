@@ -2,7 +2,10 @@
 option csharp_namespace = "AuthService";
 service Auth{
     rpc SignIn(LogPass) returns (Token);
-    rpc SignUp(FullUserInfo)returns (FullUserInfo);
+    rpc SignUp(FullUserInfo) returns (FullUserInfo);
+}
+message Res{
+    bool status =1;    
 }
 message LogPass{
     string login = 1;
@@ -19,3 +22,4 @@ message FullUserInfo{
     string name =5;
     LogPass log_passwords = 6;
 }
+       

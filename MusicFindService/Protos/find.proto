@@ -20,7 +20,7 @@ message Music{
 message Album{
     string Name = 1;
     string Author = 2;
-    string Path = 4;
+    string Photo = 4;
     int64 Id = 5;
 }
 message ResultAlbum{

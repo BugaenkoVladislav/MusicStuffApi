@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UserService.Entities;
+namespace AuthService.Entities;
 
-public partial class LoginPassword
+public  class LoginPassword
 {
     public long IdLoginPassword { get; set; }
 

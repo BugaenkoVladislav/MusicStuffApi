@@ -1,16 +1,16 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using AuthService.Context;
+using AuthService.Entities;
 using Grpc.Core;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
-using UserService;
-using UserService.Context;
-using UserService.Entities;
+
 
 namespace AuthService.Services;
 
 public class AuthApiService:Auth.AuthBase
 {
+    
     private ILogger<AuthApiService> _logger;
     private MyDbContext _db;
     public AuthApiService(ILogger<AuthApiService> logger, MyDbContext db)
@@ -54,7 +54,7 @@ public class AuthApiService:Auth.AuthBase
     {
         try
         {
-            _db.LoginPasswords.Add(new LoginPassword()
+            _db.LoginPasswords.Add(new Entities.LoginPassword()
             {
                 Login = request.LogPasswords.Login,
                 Password = request.LogPasswords.Password

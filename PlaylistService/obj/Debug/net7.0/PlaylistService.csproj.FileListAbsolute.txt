@@ -42,3 +42,14 @@ C:\Programing\MusicStuffService\PlaylistService\obj\Debug\net7.0\refint\Playlist
 C:\Programing\MusicStuffService\PlaylistService\obj\Debug\net7.0\PlaylistService.pdb
 C:\Programing\MusicStuffService\PlaylistService\obj\Debug\net7.0\PlaylistService.genruntimeconfig.cache
 C:\Programing\MusicStuffService\PlaylistService\obj\Debug\net7.0\ref\PlaylistService.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\Grpc.Core.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Programing\MusicStuffService\PlaylistService\bin\Debug\net7.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll

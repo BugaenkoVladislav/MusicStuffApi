@@ -10,7 +10,6 @@
     <ItemGroup>
         <PackageReference Include="Google.Protobuf" Version="3.25.1" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.49.0"/>
-        <PackageReference Include="Grpc.AspNetCore.Server" Version="2.60.0-pre1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
           <PrivateAssets>all</PrivateAssets>
