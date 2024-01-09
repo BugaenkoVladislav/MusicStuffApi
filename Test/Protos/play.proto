@@ -1,0 +1,9 @@
+﻿syntax = "proto3";
+option csharp_namespace = "PlayerService";
+service Play{
+    rpc GetMusicPath(Music) returns (Music);
+}
+message Music{
+    int64 id=1;
+    string uri =2;
+}

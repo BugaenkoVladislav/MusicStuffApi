@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AuthService.Entities;
 
-public  class User
+public partial class User
 {
     public long IdUser { get; set; }
 
@@ -22,4 +22,5 @@ public  class User
     public virtual LoginPassword IdLoginPasswordNavigation { get; set; } = null!;
 
     public virtual Role IdRoleNavigation { get; set; } = null!;
+    
 }

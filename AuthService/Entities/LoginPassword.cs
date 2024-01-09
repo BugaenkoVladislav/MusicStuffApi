@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AuthService.Entities;
 
-public  class LoginPassword
+public partial class LoginPassword
 {
     public long IdLoginPassword { get; set; }
 

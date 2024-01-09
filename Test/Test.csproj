@@ -31,6 +31,14 @@
         <OutputDir>obj\Debug\net7.0\</OutputDir>
         <Generator>MSBuild:Compile</Generator>
       </Protobuf>
+      <Protobuf Include="Protos\play.proto">
+        <GrpcServices>Both</GrpcServices>
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\net7.0\</OutputDir>
+        <Generator>MSBuild:Compile</Generator>
+      </Protobuf>
       <Protobuf Include="Protos\playlist.proto">
         <GrpcServices>Both</GrpcServices>
         <Access>Public</Access>

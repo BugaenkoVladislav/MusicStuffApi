@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AuthService.Entities;
 
-public  class Role
+public partial class Role
 {
     public long IdRole { get; set; }
 

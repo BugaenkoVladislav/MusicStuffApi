@@ -8,7 +8,19 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.25.1" />
         <PackageReference Include="Grpc.AspNetCore" Version="2.49.0"/>
+        <PackageReference Include="Grpc.Core.Api" Version="2.60.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.60.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
     </ItemGroup>
 
     <ItemGroup>
@@ -18,8 +30,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Protos\" />
-      <Folder Include="Services\" />
+      <None Remove="Protos\play.proto" />
+      <Protobuf Include="Protos\play.proto" />
     </ItemGroup>
 
 </Project>
